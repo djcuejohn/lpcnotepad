@@ -9,7 +9,7 @@ body {
 }
 
 .notepad {
-    background-color: #1e1e1e;
+    background-color: #45047a;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -18,7 +18,6 @@ body {
     position: relative;
     width: 90%;
     max-width: 600px;
-    height: 45vh;
 }
 
 .notepad::before {
@@ -42,10 +41,17 @@ body {
 }
 
 h1 {
-    color: white;
+    font-size: 2rem; /* Adjust title size */
+    font-weight: bold;
     text-align: center;
+    text-transform: uppercase; /* Capitalizes all letters */
+    background: linear-gradient(to right, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff);
+    -webkit-background-clip: text; /* Clips the gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the inner text transparent */
+    -webkit-text-stroke: 2px black; /* Adds black stroke around the letters */
     margin-bottom: 20px;
 }
+
 
 .field {
     display: flex;
@@ -58,12 +64,17 @@ h1 {
     width: 150px;
 }
 
-.field input {
+.field input, .field textarea {
     flex: 1;
     padding: 5px;
     margin-right: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    resize: none;
+}
+
+.field textarea {
+    height: 60px;
 }
 
 .field button {
@@ -78,43 +89,3 @@ h1 {
 .field button:hover {
     background-color: #0056b3;
 }
-
-#description, .container {
-    height: 4vh; /* Triple the original height */
-    text-align: left;
-    width: 100%;
-}
-
-
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
-  
-  .field::after, .field::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 3px;
-    border-radius: 10px;
-    animation: 3s spin linear infinite;
-  }
-  .field::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
-  }
-  @keyframes spin{
-    from{
-      --angle: 0deg;
-    }
-    to{
-      --angle: 360deg;
-    }
-  }
