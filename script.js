@@ -20,6 +20,7 @@ function saveAsTxt() {
         email: document.getElementById('email').value.trim(),
         accountName: document.getElementById('accountName').value.trim(),
         conversationId: document.getElementById('conversationId').value.trim(),
+        impactCase: document.getElementById('impactCase').value.trim(),
         description: document.getElementById('description').value.trim(),
     };
 
@@ -31,6 +32,7 @@ State: ${data.state}
 Email Address: ${data.email}
 Account Name: ${data.accountName}
 Conversation ID: ${data.conversationId}
+Impact Case: ${data.impactCase}
 Description: ${data.description}
 `;
 
